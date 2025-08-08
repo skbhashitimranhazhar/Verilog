@@ -1,0 +1,20 @@
+module ALU_addsub (a,b,sel,out,carry);
+input [3:0]a,b;
+input sel;
+output [3:0]out;
+output carry;
+wire [3:0]bar;
+wire w1,w2,w3;
+assign bar[0] = b[0] ^ sel;
+assign bar[1] = b[1] ^ sel;
+assign bar[2] = b[2] ^ sel;
+assign bar[3] = b[3] ^ sel;
+assign out[0] = a[0] ^ bar[0] ^ sel;
+assign w1 = (a[0] & bar[0]) | (a[0] & sel) | (bar[0] & sel);
+assign out[1] = a[1] ^ bar[1] ^ w1;
+assign w2 = (a[1] & bar[1]) | (a[1] & w1) | (bar[1] & w1);
+assign out[2] = a[2] ^ bar[2] ^ w2;
+assign w3 = (a[2] & bar[2]) | (a[2] & w2) | (bar[2] & w2);
+assign out[3] = a[3] ^ bar[3] ^ w3;
+assign carry = (a[3] & bar[3]) | (a[3] & w3) | (bar[3] & w3);
+endmodule
