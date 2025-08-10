@@ -1,1 +1,21 @@
-This are my practice/learning?
+// ==========================================================
+// Project: Verilog-Learnings
+// Author: <skbhashitimranhazhar>
+// Description: A repository to document and share my journey
+//              learning Verilog through practice and projects.
+// ==========================================================
+
+/*
+ * This repo includes:
+ *  - Basic Verilog codes
+ *  - Combinational and sequential circuit designs
+ *  - Testbenches for simulation
+ *  - Mini-projects and experiments
+ */
+
+module Verilog_Learnings;
+    initial begin
+        $display("Welcome to my Verilog learning repository!");
+        $display("Happy Hacking lol!");
+    end
+endmodule
